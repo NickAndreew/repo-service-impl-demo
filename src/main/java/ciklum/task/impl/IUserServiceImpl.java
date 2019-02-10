@@ -31,7 +31,7 @@ public class IUserServiceImpl implements IUserService {
 
     public List<IUserImpl> findById(String id){
         List<IUserImpl> usersById = new ArrayList<>();
-        usersById.add(repository.findById(id) .orElse(null));
+        usersById.add(repository.findById(id).orElse(null));
         return usersById;
     }
 
