@@ -41,7 +41,7 @@ public class IUserServiceImpl implements IUserService {
         } catch (Exception e){
             e.printStackTrace();
         }
-            return (IUserImpl) user;
+        return (IUserImpl) user;
     }
 
     public List<IUserImpl> saveAll(Iterable newUsers) {
@@ -52,7 +52,6 @@ public class IUserServiceImpl implements IUserService {
         } catch(Exception e){
             e.printStackTrace();
         }
-
         return users;
     }
 
@@ -77,8 +76,9 @@ public class IUserServiceImpl implements IUserService {
                 this.findAll()
                     .stream()
                     .filter(iUser -> groupId.equals(iUser.getGroupId()))
-                    .collect(Collectors.toList()))
-                );
+                    .collect(Collectors.toList())
+            )
+        );
 
         return userAllUsersByGroupIdMap;
     }
