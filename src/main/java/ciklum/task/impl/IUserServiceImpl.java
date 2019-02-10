@@ -79,7 +79,6 @@ public class IUserServiceImpl implements IUserService {
                     .collect(Collectors.toList())
             )
         );
-
         return userAllUsersByGroupIdMap;
     }
 }
