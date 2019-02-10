@@ -23,7 +23,6 @@ public class IUserServiceImpl implements IUserService {
     @Autowired
     private IUserImplRepository repository;
 
-
     public List<IUserImpl> findAll() {
         List<IUserImpl> list = new ArrayList<>();
         repository.findAll().forEach(list::add);
