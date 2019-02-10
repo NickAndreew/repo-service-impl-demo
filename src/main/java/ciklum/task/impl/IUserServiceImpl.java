@@ -1,12 +1,5 @@
 package ciklum.task.impl;
 
-import ciklum.task.repo.IUserImplRepository;
-import ciklum.task.src.IUserService;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Set;
@@ -14,6 +7,14 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.stream.Collectors;
+
+import ciklum.task.repo.IUserImplRepository;
+import ciklum.task.src.IUserService;
+
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor

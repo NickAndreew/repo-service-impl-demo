@@ -2,6 +2,7 @@ package ciklum.task;
 
 import ciklum.task.impl.IUserImpl;
 import ciklum.task.impl.IUserServiceImpl;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
