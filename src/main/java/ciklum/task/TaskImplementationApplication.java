@@ -27,7 +27,7 @@ public class TaskImplementationApplication implements CommandLineRunner {
 		service.delete("2");
 		service.findAll();
 		service.findById("1");
-		System.out.println(service.findAll().toString());
+		System.out.println("\n\n\nThis is our output!"+service.findAll().toString()+"\n\n\n");
 	}
 }
 

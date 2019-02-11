@@ -13,6 +13,8 @@ import ciklum.task.src.IUserService;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,24 +23,29 @@ import org.springframework.stereotype.Service;
 @NoArgsConstructor
 public class IUserServiceImpl implements IUserService {
 
+    public Logger logger = LoggerFactory.getLogger(IUserServiceImpl.class);
+
     @Autowired
     private IUserImplRepository repository;
 
     public List<IUserImpl> findAll() {
         List<IUserImpl> list = new ArrayList<>();
         repository.findAll().forEach(list::add);
+        logger.info("findAll() method is running.");
         return list;
     }
 
     public List<IUserImpl> findById(String id){
         List<IUserImpl> usersById = new ArrayList<>();
         usersById.add(repository.findById(id).orElse(null));
+        logger.info("findById('"+id+"') method is running.");
         return usersById;
     }
 
     public IUserImpl save(Object user) {
         try {
             repository.save((IUserImpl) user);
+            logger.info("findById('"+(IUserImpl) user+"') method is running.");
         } catch (Exception e){
             e.printStackTrace();
         }
@@ -50,6 +57,7 @@ public class IUserServiceImpl implements IUserService {
         try {
             newUsers.forEach(o -> users.add((IUserImpl) o));
             repository.saveAll(newUsers);
+            logger.info("saveAll('"+newUsers.toString()+"') method is running.");
         } catch(Exception e){
             e.printStackTrace();
         }
@@ -61,6 +69,7 @@ public class IUserServiceImpl implements IUserService {
         IUserImpl user = list.get(0);
         if(user!=null) {
             repository.delete(user);
+            logger.info("delete('"+id+"')");
         }
         return user;
     }
@@ -80,6 +89,7 @@ public class IUserServiceImpl implements IUserService {
                     .collect(Collectors.toList())
             )
         );
+        logger.info("findAllGroupByGroupId() method is running.");
         return userAllUsersByGroupIdMap;
     }
 }
