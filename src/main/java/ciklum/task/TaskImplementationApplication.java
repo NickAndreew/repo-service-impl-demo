@@ -29,6 +29,5 @@ public class TaskImplementationApplication implements CommandLineRunner {
 		service.findById("1");
 		System.out.println(service.findAll().toString());
 	}
-
 }
 
