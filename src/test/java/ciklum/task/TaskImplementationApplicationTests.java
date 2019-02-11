@@ -1,4 +1,4 @@
-package ciklum.task.TaskImplementation;
+package ciklum.task;
 
 import java.util.List;
 import java.util.ArrayList;
